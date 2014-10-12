@@ -18,18 +18,16 @@ public class PlayerController : MonoBehaviour
 	}
 
 	void FixedUpdate () {
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
 
-		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+		Vector3 movement = new Vector3(Input.gyro.gravity.x, 0.0f, Input.gyro.gravity.y);
+		Quaternion direction = Quaternion.Euler (0.0f, transform.rotation.y, 0.0f);
+		movement = direction * movement;
 
 		rigidbody.AddForce(movement * speed * Time.deltaTime); //omitting second argument
-
 	}
 	
 	void OnTriggerEnter(Collider other) 
 	{
-		// Destroy(other.gameObject);
 		
 		if (other.gameObject.tag == "PickUp") 
 		{

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AAB1F05A-CAFE-4218-AFDA-A6176628A7C0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Unity-iPhone</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>14D9BA22658D9D51CB4B3F967552D3F265C47CE2</key>
+		<string>https://github.com/noellekimiko/clinic.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tilt And Roll/Build/Tilt_and_Roll_Ipad_v02/Unity-iPhone.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>14D9BA22658D9D51CB4B3F967552D3F265C47CE2</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/noellekimiko/clinic.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>14D9BA22658D9D51CB4B3F967552D3F265C47CE2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>14D9BA22658D9D51CB4B3F967552D3F265C47CE2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Unity</string>
+		</dict>
+	</array>
+</dict>
+</plist>
