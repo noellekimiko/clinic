@@ -5,16 +5,19 @@ public class KeyPressPlayerController : MonoBehaviour {
 
 	public float speed;
 	public GUIText countText;
-	public GUIText winText;
-	private int count;
-	private int NUM_OBJECTS;
-	
+	public GUIText gameOverText;
+	private int score;
+	private int pickupCount;
+
+	// In the inspector, set this to the gameobject that has the pickup script associated with it
+	public Pickups pickups; 
+
 	void Start ()
 	{
-		count = 0;
-		SetCountText();
-		winText.text = "";
-		NUM_OBJECTS = 3;
+		score = 0;
+		pickupCount = 0;
+		SetScoreText();
+		gameOverText.text = "";
 	}
 	
 	void FixedUpdate () {
@@ -33,17 +36,29 @@ public class KeyPressPlayerController : MonoBehaviour {
 		if (other.gameObject.tag == "PickUp") 
 		{
 			other.gameObject.SetActive(false);
-			count += 1;
-			SetCountText();
+			score += 1;
+			pickupCount += 1;
+			SetScoreText();
+		}
+
+		if (other.gameObject.tag == "Avoid") 
+		{
+			other.gameObject.SetActive(false);
+			score -= 1;
+			SetScoreText();
 		}
 	}
 	
-	void SetCountText () 
+	void SetScoreText () 
 	{
-		countText.text = "Count: " + count.ToString();
-		if (count >= NUM_OBJECTS) 
+		countText.text = "Score: " + score.ToString();
+		SetGameOverText();
+	}
+	
+	void SetGameOverText () {
+		if (pickupCount >= pickups.numPickups) 
 		{
-			winText.text = "You Win!";
+			gameOverText.text = "Game Over!";
 		}
 	}
 }
