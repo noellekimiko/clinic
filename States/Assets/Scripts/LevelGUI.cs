@@ -29,7 +29,8 @@ public class LevelGUI : MonoBehaviour {
 
 		// Output stats
 		GUI.Label(new Rect(30, 100, 400, 30), "Name: " + GameState.Instance.getName());
-		GUI.Label(new Rect(30, 130, 400, 30), "HP: " + GameState.Instance.getHP().ToString());
-		GUI.Label(new Rect(30, 160, 400, 30), "MP: " + GameState.Instance.getMP().ToString());
+		GUI.Label(new Rect(30, 130, 400, 30), "Caffeine: " + GameState.Instance.getCaffeineLevel().ToString());
+		GUI.Label(new Rect(30, 160, 400, 30), "Speed: " + GameState.Instance.getSpeed().ToString());
+		GUI.Label(new Rect(30, 190, 400, 30), "Inventory: " + GameState.Instance.getInventoryString());
 	}
 }

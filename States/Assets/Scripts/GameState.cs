@@ -5,15 +5,15 @@ public class GameState : MonoBehaviour {
 
 	private static GameState instance;
 	private string activeLevel;			// Active level
-	private string name;				// Characters name
-	private int maxHP;					// Max HP
-	private int maxMP;					// Map MP
-	private int hp;						// Current HP
-	private int mp;						// Current MP
-	private int strength;					// Characters Strength
-	private int vitality;					// Characters Vitality
-	private int dexterity;					// Characters Dexterity
-	private int experience;					// Characters Experience Points
+	private string name;				// Character's name
+	private int maxCaffeineLevel;		// Max caffeine level
+	private int caffeineLevel;			// Current caffeine level
+	private int strength;				// Character's Strength
+	private int vitality;				// Character's Vitality
+	private int experience;				// Character's Experience Points
+	private int speed;					// Character's Speed
+	private string[] inventory;			// Items a character has
+	private int numInventoryItems;
 
 	// Creates an instance of GameState as a gameobject if an instance does not exist
 	public static GameState Instance
@@ -43,14 +43,15 @@ public class GameState : MonoBehaviour {
 		// Set default properties:
 		activeLevel = "Level 1";
 		name = "My Character";
-		maxHP = 250;
-		maxMP = 60;
-		hp = maxHP;
-		mp = maxMP;
+		maxCaffeineLevel = 250;
+		caffeineLevel = maxCaffeineLevel;
 		strength = 6;
 		vitality = 5;
-		dexterity = 7;
 		experience = 0;
+		speed = (caffeineLevel / 10);
+		numInventoryItems = 8;
+		inventory = new string[numInventoryItems];
+		inventory[0] = "hi";
 
 		// Load level 1
 		Application.LoadLevel("scene1");
@@ -61,7 +62,6 @@ public class GameState : MonoBehaviour {
 	{
 		return activeLevel;
 	}
-	
 	
 	// Sets the currently active level to a new value
 	public void setLevel(string newLevel)
@@ -75,15 +75,25 @@ public class GameState : MonoBehaviour {
 		return name;
 	}
 
-	// Returns the characters hp
-	public int getHP()
+	// Returns the character's caffeine level
+	public int getCaffeineLevel()
 	{
-		return hp;
+		return caffeineLevel;
 	}
-	
-	// Returns the characters mp
-	public int getMP()
+
+	public int getSpeed()
 	{
-		return mp;
+		return speed;
+	}
+
+	public string getInventoryString() 
+	{
+		string returnVal = "";
+		for(int i = 0; i < inventory.Length; i++)
+		{
+			returnVal += inventory[i];
+		}
+
+		return returnVal;
 	}
 }
